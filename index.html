@@ -1,122 +1,182 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Segurança Digital para Idosos</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Futebol Acessível - Notícias, Jogos e Tabelas</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <!-- MENU DE ACESSIBILIDADE -->
-    <nav class="barra-acessibilidade" aria-label="Controles de Acessibilidade">
-        <button id="btnAumentaTexto" class="botao-controle" title="Aumentar texto">A+</button>
-        <button id="btnDiminuiTexto" class="botao-controle" title="Diminuir texto">A-</button>
-        <button id="btnVoz" class="botao-controle botao-leitura" >🔊</button>
+  <a href="#conteudo-principal" class="sr-only">Pular direto para o conteúdo principal</a>
+
+  <header>
+    <h1>Portal Futebol em Foco</h1>
+
+    <div class="painel-acessibilidade" aria-label="Ajustes de Acessibilidade Visual">
+      <span>Tamanho do Texto:</span>
+      <button onclick="alterarTamanhoTexto(2)" aria-label="Aumentar o tamanho do texto">A+ Aumentar Fonte</button>
+      <button onclick="alterarTamanhoTexto(-2)" aria-label="Diminuir o tamanho do texto">A- Diminuir Fonte</button>
+      <button onclick="resetarTamanhoTexto()" aria-label="Restaurar o tamanho original do texto">Tamanho Padrão</button>
+    </div>
+
+    <nav aria-label="Menu Principal do Site">
+      <ul>
+        <li><a href="#ultimas-noticias">Últimas Notícias</a></li>
+        <li><a href="#proximos-jogos">Próximos Jogos</a></li>
+        <li><a href="#tabela-classificacao">Classificação</a></li>
+        <li><a href="#artilharia">Artilharia</a></li>
+        <li><a href="#guia-regras">Guia de Regras</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <main>
+  <main id="conteudo-principal">
 
-        <!-- 1. INÍCIO -->
-        <section class="banner">
-            <h1>Guia de Segurança Digital</h1>
-            <p style="margin-bottom: 30px;">Proteja-se e navegue com tranquilidade.</p>
-            <a href="#contato-ajuda" class="botao-ajuda">PRECISO DE AJUDA AGORA</a>
-        </section>
+    <section id="ultimas-noticias" tabindex="0">
+      <h2>1. Últimas Notícias do Futebol</h2>
 
-        <div class="conteudo">
+      <article>
+        <h3>Seleção Brasileira Inicia Preparação para Amistosos Internacionais</h3>
+        <p>A Seleção Brasileira se reapresentou na manhã desta terça-feira para iniciar os treinos focados nos próximos compromissos internacionais. O técnico convocou 23 jogadores, destacando o retorno de atletas experientes no setor ofensivo.</p>
+        <p>Os treinos táticos ocorrerão ao longo de toda a semana em dois turnos. A expectativa é de casa cheia para o confronto do fim de semana.</p>
+      </article>
 
-            <div class="modal-fundo">
+      <article>
+        <h3>Final da Copa Nacional Promete Recorde de Público</h3>
+        <p>Os ingressos para a grande decisão do campeonato nacional se esgotaram em poucas horas. A partida decisiva será transmitida em rádio e televisão aberta para todo o país.</p>
+        <p>A organização do evento reforçou o esquema de mobilidade urbana e segurança nos arredores do estádio para atender a torcida e torcedores idosos com prioridade no acesso.</p>
+      </article>
+    </section>
 
-                <!-- SEÇÃO DE DESTINO DO BOTÃO DE AJUDA -->
-                <section id="contato-ajuda" style="margin-top: 60px; background: #eef;" class="modal-conteudo">
-                    <h2 style="margin-top: 0;">O que fazer agora?</h2>
-                    <p>Se você acha que caiu em um golpe ou está com medo de uma mensagem:</p>
-                    <ol>
-                        <li><strong>Pare tudo o que está fazendo.</strong></li>
-                        <li><strong>Ligue para um filho, neto ou amigo próximo.</strong></li>
-                        <li><strong>Ligue para o seu banco</strong> usando o número que está atrás do seu cartão.</li>
-                        <li><strong>Registre um Boletim de Ocorrência</strong> na delegacia mais próxima ou pela
-                            internet.
-                        </li>
-                    </ol>
-                    <button class="botao-ajuda botao-fechar">Fechar</button>
-                </section>
-            </div>
+    <section id="proximos-jogos" tabindex="0">
+      <h2>2. Próximos Jogos e Horários</h2>
+      <p>Confira abaixo a programação das partidas do fim de semana, com datas, horários e canais de transmissão.</p>
 
+      <table>
+        <caption>Calendário de Jogos do Fim de Semana</caption>
+        <thead>
+          <tr>
+            <th scope="col">Data / Horário</th>
+            <th scope="col">Confronto</th>
+            <th scope="col">Onde Assistir</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Sábado - 16:00</td>
+            <td>Flamengo x Palmeiras</td>
+            <td>TV Aberta e Rádio</td>
+          </tr>
+          <tr>
+            <td>Sábado - 18:30</td>
+            <td>São Paulo x Corinthians</td>
+            <td>TV Fechada</td>
+          </tr>
+          <tr>
+            <td>Domingo - 16:00</td>
+            <td>Grêmio x Internacional</td>
+            <td>TV Aberta e Rádio</td>
+          </tr>
+          <tr>
+            <td>Domingo - 18:30</td>
+            <td>Cruzeiro x Atlético-MG</td>
+            <td>TV Fechada</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
-            <!-- 2. DICAS IMPORTANTES -->
-            <section id="dicas">
-                <h2>Dicas Importantes</h2>
-                <div class="grade-dicas">
-                    <div class="cartao-dica">
-                        <strong>1. Use senhas longas</strong>
-                        Prefira frases que você gosta em vez de apenas números. Exemplo: "EuAmoMinhaFamilia2024!".
-                    </div>
-                    <div class="cartao-dica">
-                        <strong>2. Desconfie de urgência</strong>
-                        Se alguém pedir dinheiro rápido dizendo que é emergência, pare e ligue para a pessoa antes.
-                    </div>
-                    <div class="cartao-dica">
-                        <strong>3. Não clique em tudo</strong>
-                        Links que prometem prêmios ou dinheiro fácil geralmente são armadilhas.
-                    </div>
-                </div>
-            </section>
+    <section id="tabela-classificacao" tabindex="0">
+      <h2>3. Tabela de Classificação do Campeonato</h2>
 
-            <!-- 3. DIREITOS NA INTERNET -->
-            <section id="direitos">
-                <h2>Direitos na Internet</h2>
-                <div class="caixa-direitos">
-                    <p>Você sabia que no Brasil existe o <strong>Marco Civil da Internet</strong> e a
-                        <strong>LGPD</strong>?
-                        Essas leis garantem que você tenha direitos básicos no mundo digital:</p>
-                    <ul>
-                        <li><strong>Privacidade:</strong> Suas conversas e dados pessoais não podem ser expostos sem sua
-                            permissão.</li>
-                        <li><strong>Liberdade de Expressão:</strong> Você tem o direito de se manifestar, desde que não
-                            ofenda ninguém.</li>
-                        <li><strong>Proteção de Dados:</strong> Empresas devem cuidar bem das suas informações (nome,
-                            CPF,
-                            endereço).</li>
-                        <li><strong>Direito ao Esquecimento:</strong> Em alguns casos, você pode pedir que informações
-                            antigas sobre você sejam removidas.</li>
-                    </ul>
-                </div>
-            </section>
+      <table>
+        <caption>Classificação dos Primeiros Colocados</caption>
+        <thead>
+          <tr>
+            <th scope="col">Posição</th>
+            <th scope="col">Clube</th>
+            <th scope="col">Pontos</th>
+            <th scope="col">Vitórias</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1º lugar</td>
+            <td>Palmeiras</td>
+            <td>45 pts</td>
+            <td>14</td>
+          </tr>
+          <tr>
+            <td>2º lugar</td>
+            <td>Flamengo</td>
+            <td>43 pts</td>
+            <td>13</td>
+          </tr>
+          <tr>
+            <td>3º lugar</td>
+            <td>Botafogo</td>
+            <td>40 pts</td>
+            <td>12</td>
+          </tr>
+          <tr>
+            <td>4º lugar</td>
+            <td>Grêmio</td>
+            <td>38 pts</td>
+            <td>11</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
-            <!-- 4. COMO SABER SE ESTOU CAINDO EM UM GOLPE? -->
-            <section id="golpes">
-                <h2>Sinais de um Golpe</h2>
-                <p style="margin-bottom: 20px;">Fique atento a estas atitudes suspeitas:</p>
-                <ul class="alerta-golpe">
-                    <li><strong>Pedido de segredo:</strong> O golpista pede para você não contar para ninguém sobre a
-                        conversa ou a transação.</li>
-                    <li><strong>Erros de português:</strong> Mensagens de bancos ou empresas famosas com muitos erros de
-                        escrita são sinais claros de fraude.</li>
-                    <li><strong>Falso funcionário:</strong> Pessoas que ligam dizendo ser do banco e pedem para você
-                        confirmar sua senha ou entregar o cartão.</li>
-                    <li><strong>Número desconhecido com foto de conhecido:</strong> Alguém usa a foto de um parente seu
-                        e
-                        diz: "Mudei meu número, me faz um PIX?".</li>
-                </ul>
-            </section>
+    <section id="artilharia" tabindex="0">
+      <h2>4. Principais Artilheiros da Temporada</h2>
 
+      <table>
+        <caption>Ranking de Gols do Campeonato</caption>
+        <thead>
+          <tr>
+            <th scope="col">Jogador</th>
+            <th scope="col">Clube</th>
+            <th scope="col">Gols Marcados</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Gabriel Barbosa</td>
+            <td>Flamengo</td>
+            <td>15 Gols</td>
+          </tr>
+          <tr>
+            <td>Endrick</td>
+            <td>Palmeiras</td>
+            <td>13 Gols</td>
+          </tr>
+          <tr>
+            <td>Luis Suárez</td>
+            <td>Grêmio</td>
+            <td>12 Gols</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
+    <section id="guia-regras" tabindex="0">
+      <h2>5. Guia Rápido: Entenda as Regras Básicas</h2>
+      
+      <p><strong>Impedimento:</strong> Um jogador está em impedimento se estiver mais próximo da linha de gol adversária do que a bola e o penúltimo adversário no momento em que a bola lhe é passada.</p>
+      
+      <p><strong>Pênalti:</strong> É marcado quando uma falta direta é cometida dentro da grande área de defesa do time que sofreu a infração.</p>
+      
+      <p><strong>Cartão Amarelo e Vermelho:</strong> O amarelo serve como advertência por conduta antidesportiva ou faltas recorrentes. Dois cartões amarelos resultam em um vermelho, que gera expulsão imediata do jogador.</p>
+    </section>
 
-        </div>
+  </main>
 
-        <footer>
-            <p><strong>Segurança Digital para a Melhor Idade</strong></p>
-            <p>Este guia é informativo. Nunca compartilhe sua senha com estranhos.</p>
-        </footer>
-    </main>
+  <footer>
+    <p>Portal Futebol em Foco — Desenvolvido com foco em acessibilidade visual e facilidade de leitura.</p>
+  </footer>
 
-
-    <script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
-
 </html>

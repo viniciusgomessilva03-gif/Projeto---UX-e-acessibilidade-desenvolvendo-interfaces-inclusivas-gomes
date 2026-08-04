@@ -1,242 +1,187 @@
-:root {
-    --primaria: #003366;
-    --secundaria: #ffcc00;
-    --perigo: #cc0000;
-    --texto: #1a1a1a;
-    --fundo: #ffffff;
-    --fundo-cartao: #f0f4f8;
-}
-
+/* RESET E ESTILOS GERAIS */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    font-size: 22px;
-    /* Fonte aumentada para leitura */
-    line-height: 1.5;
-    color: var(--texto);
-    background-color: var(--fundo);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px; /* Fonte base ampliada */
+  line-height: 1.7;
+  background-color: #120016; /* Fundo roxo muito escuro para alto contraste */
+  color: #FFFFFF; /* Texto em branco puro */
+  padding: 20px;
 }
 
-/* --- MENU DE ACESSIBILIDADE --- */
-.barra-acessibilidade {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: #333;
-    color: white;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    z-index: 1000;
-    flex-wrap: wrap;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+/* CLASSE PARA LEITORES DE TELA */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 
-.botao-controle {
-    background: white;
-    color: #333;
-    border: 2px solid var(--secundaria);
-    padding: 10px 15px;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 8px;
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+/* CABEÇALHO E ATALHOS DE ACESSIBILIDADE */
+header {
+  border-bottom: 5px solid #FF3366; /* Linha de destaque em vermelho vibrante */
+  padding-bottom: 25px;
+  margin-bottom: 30px;
 }
 
-.botao-controle:hover {
-    background: var(--secundaria);
+h1 {
+  font-size: 2.5rem;
+  color: #FF3366; /* Vermelho/Rosa vibrante de alto contraste */
+  margin-bottom: 15px;
 }
 
-.botao-leitura {
-    background: #28a745;
-    color: white;
-    border: none;
+.painel-acessibilidade {
+  background-color: #2A0036; /* Roxo escuro */
+  border: 3px solid #FF3366;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
-/* 1. Início: Banner com Botão de Ajuda */
-.banner {
-    background-color: var(--primaria);
-    color: white;
-    padding: 50px 20px;
-    text-align: center;
-    border-bottom: 10px solid var(--secundaria);
+.painel-acessibilidade span {
+  font-weight: bold;
+  color: #E0B0FF; /* Lilás claro */
 }
 
-.banner h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    padding-top: 70px;
+button {
+  background-color: #FF3366; /* Botões em vermelho vibrante */
+  color: #FFFFFF;
+  border: 3px solid #E0B0FF; /* Borda em lilás claro */
+  padding: 12px 22px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
 }
 
-.botao-ajuda {
-    display: inline-block;
-    background-color: var(--perigo);
-    color: white;
-    padding: 20px 40px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 50px;
-    font-size: 1.5rem;
-    border: 4px solid white;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.2s;
+button:focus, button:hover {
+  background-color: #E0B0FF; /* Lilás no foco/hover */
+  color: #120016;
+  outline: 4px solid #FF3366;
 }
 
-.botao-ajuda:active {
-    transform: scale(0.95);
+/* MENU DE NAVEGAÇÃO PRINCIPAL */
+nav {
+  margin-top: 15px;
 }
 
-.conteudo {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
-.modal-fundo {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+nav a {
+  background-color: #2A0036;
+  color: #FFFFFF;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 1.3rem;
+  padding: 12px 18px;
+  border: 2px solid #FF3366;
+  border-radius: 6px;
+  display: inline-block;
 }
 
-/* O que fazer agora? */
-.modal-conteudo {
-    background-color: #fff9e6;
-    padding: 40px;
-    border-radius: 15px;
-    border: 2px dashed var(--primaria);
-
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    max-width: 90%;
-    width: 600px;
-    margin: 0 !important;
+nav a:focus, nav a:hover {
+  background-color: #FF3366;
+  color: #FFFFFF;
+  text-decoration: none;
+  outline: 4px solid #E0B0FF;
 }
 
-ol {
-    padding: 40px;
+/* ESTRUTURA DO CONTEÚDO */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+section {
+  background-color: #21002B; /* Roxo intermediário escuro */
+  border: 3px solid #FF3366; /* Borda vermelha */
+  padding: 30px;
+  margin-bottom: 40px;
+  border-radius: 10px;
 }
 
 h2 {
-    color: var(--primaria);
-    border-bottom: 4px solid var(--secundaria);
-    margin: 40px 0 20px;
-    padding-bottom: 10px;
-    font-size: 2rem;
+  font-size: 2rem;
+  color: #FF3366; /* Vermelho vibrante */
+  margin-bottom: 20px;
+  border-bottom: 3px solid #FF3366;
+  padding-bottom: 8px;
 }
 
-/* 2. Dicas Importantes */
-.grade-dicas {
-    display: grid;
-    gap: 20px;
+h3 {
+  font-size: 1.5rem;
+  color: #E0B0FF; /* Lilás claro brilhante para subtítulos */
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
-.cartao-dica {
-    background: var(--fundo-cartao);
-    padding: 20px;
-    border-radius: 15px;
-    border-left: 15px solid var(--primaria);
+p {
+  margin-bottom: 15px;
 }
 
-.cartao-dica strong {
-    display: block;
-    font-size: 1.4rem;
-    margin-bottom: 5px;
-    color: var(--primaria);
+article {
+  border-bottom: 2px dashed #660080;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
 }
 
-/* 3. Direitos na Internet */
-.caixa-direitos {
-    background-color: #fff9e6;
-    padding: 40px;
-    border-radius: 15px;
-    border: 2px dashed var(--primaria);
+article:last-child {
+  border-bottom: none;
 }
 
-.caixa-direitos p {
-    margin-bottom: 15px;
+/* TABELAS ACESSÍVEIS */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 1.2rem;
 }
 
-/* --- SEÇÃO GOLPES --- */
-.alerta-golpe {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 20px;
+caption {
+  font-weight: bold;
+  color: #E0B0FF;
+  margin-bottom: 10px;
+  text-align: left;
+  font-size: 1.3rem;
 }
 
-.alerta-golpe li {
-    background: #fff5f5;
-    padding: 25px;
-    border-radius: 20px;
-    border: 2px solid #ffe3e3;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    transition: background 0.2s;
+th, td {
+  border: 2px solid #FFFFFF;
+  padding: 14px;
+  text-align: left;
 }
 
-.alerta-golpe li:hover {
-    background: #fff1f1;
+th {
+  background-color: #3B004E; /* Cabeçalho da tabela em roxo destacado */
+  color: #FF3366;
 }
 
-.alerta-golpe .icone-alerta {
-    font-size: 2.5rem;
-    background: var(--branco);
-    width: 70px;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    flex-shrink: 0;
-    box-shadow: 0 4px 8px rgba(211, 47, 47, 0.1);
+tr:nth-child(even) {
+  background-color: #2A0036;
 }
 
 footer {
-    display: block;
-    background: var(--primaria);
-    color: white;
-    text-align: center;
-    padding: 40px 20px;
-    margin-top: 50px;
-}
-
-/* Ajustes para Celular */
-@media (max-width: 600px) {
-    body {
-        font-size: 20px;
-    }
-
-    .banner h1 {
-        font-size: 1.8rem;
-        padding-top: 80px;
-    }
-
-    .botao-ajuda {
-        width: 100%;
-        padding: 15px;
-    }
-}
-
-/* Rolagem suave para o botão funcionar elegantemente */
-html {
-    scroll-behavior: smooth;
+  text-align: center;
+  margin-top: 50px;
+  padding: 25px 0;
+  border-top: 4px solid #FF3366;
+  font-size: 1.1rem;
 }
